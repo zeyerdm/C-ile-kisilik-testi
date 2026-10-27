@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C ile kisilik testi.c">
+    <ClCompile Include="KisilikTesti.c">
       <Filter>Kaynak Dosyalar</Filter>
     </ClCompile>
   </ItemGroup>

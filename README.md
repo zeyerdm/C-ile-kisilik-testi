@@ -1,51 +1,79 @@
-🎭 KİŞİLİK TESTİ PROJESİ
-📌 Projenin Amacı
-Bu projenin temel amacı, kodlama ile sanatı birleştirmektir. İlk bakışta yazılım dünyasıyla alakasız gibi görünen şiirin, aslında bilişim alanında da duygu, anlam ve estetik bir araç olarak kullanılabileceğini göstermektedir. Bu test sayesinde kullanıcılar sadece eğlenceli bir kişilik analiziyle karşılaşmakla kalmaz; aynı zamanda kişiliklerine uygun özel olarak seçilmiş şiirlerle de duygusal bir bağ kurarlar.
+# 🎭 Şiir Öneren Kişilik Testi (C)
 
-🧠 Projenin İçeriği
-Kullanıcının cevaplarına göre puanlama yapılmakta ve belirli puan aralıklarına göre kişilik tipi analiz edilerek, her kişilik tipi için uygun bir şiir önerisi yapılmaktadır. Projede görsellik için ANSI renk kodları ve Windows konsol efektleri (örneğin Sleep, system("cls")) kullanılmıştır.
+> 20 soruluk bir kişilik testi uygulayan, sonuca göre kullanıcıya kişiliğine uygun bir şiir öneren renkli konsol uygulaması.
+>
+> *A colorful C console app that runs a 20-question personality test and recommends a poem matching the result.*
 
-📋 Nasıl Çalışır?
-Program başlatıldığında kullanıcıdan test başlatma ya da geçmiş sonuçları görüntüleme seçimi istenir.
+![Dil](https://img.shields.io/badge/Dil-C-00599C?logo=c&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows&logoColor=white)
+![IDE](https://img.shields.io/badge/IDE-Visual%20Studio%202022-5C2D91?logo=visualstudio&logoColor=white)
 
-Kullanıcı testi seçerse ismi alınır ve 20 adet soru ile kişilik testi başlatılır.
+## 📌 Proje Hakkında
 
-Sorulara verilen cevaplara göre puan hesaplanır.
+Bu projenin amacı kodlama ile sanatı bir araya getirmektir. Kullanıcı 20 soruyu yanıtlar, her cevap önceden belirlenmiş bir puana karşılık gelir ve toplam puanın aralığına göre bir kişilik analizi yapılır. Analizin sonunda kullanıcıya kişiliğine uygun bir şiir sunulur.
 
-Puan aralığına göre kullanıcının kişilik tipi analiz edilir ve kendisine uygun bir şiir sunulur.
+Sorular, cevap seçenekleri ve puanlama sistemi tamamen tarafımdan hazırlanmıştır; puan aralıkları kişilik tiplerinin genel özellikleri incelenerek belirlenmiştir.
 
-Elde edilen isim ve puan geçmiş kayıtlara eklenir ve daha sonra görüntülenebilir.
+## ✨ Özellikler
 
-🔍 Sorular Hakkında
-Tüm sorular, cevap seçenekleri ve her bir seçeneğe verilen puan tarafımca özenle hazırlanmıştır. Cevaplara göre çıkan kişilik analizleri, rastgele değil, kişilik tiplerinin genel özelliklerinin analiz edilmesi sonucu oluşturulmuştur. Yani hangi kişilik tipi ne tür cevaplar verebilir düşünülerek kurgulanmış ve bu doğrultuda bir puanlama sistemi geliştirilmiştir.
+- **Menü:** Teste başlama veya geçmiş kayıtları görüntüleme
+- **20 soruluk test:** Her cevap için ayrı puanlama
+- **Kişilik analizi:** Toplam puanın aralığına göre kişilik tipi ve ona özel şiir önerisi
+- **Kayıt geçmişi:** Oturum boyunca en fazla 20 kullanıcının adı ve puanı saklanır ve listelenebilir
+- **Görsel deneyim:** ANSI renk kodları, yükleme animasyonu, `Sleep()` / `system("cls")` ile ekran geçişleri
 
-🎨 Neden Şiir?
-Proje; teknolojiyi yalnızca teknik verilerle sınırlamadan, insan ruhuna ve duygularına hitap eden sanatsal ögeleri de yazılıma dahil etme vizyonuyla oluşturulmuştur. Şiir, her ne kadar yazılımdan uzak bir kavram gibi görünse de; doğru bağlamda ve analiz odaklı kullanıldığında bilişim projelerine anlam katabileceği gösterilmek istenmiştir.
+## 🛠️ Kullanılan Teknolojiler
 
-💻 Teknik Detaylar
-Program dili: C
+| Alan | Teknoloji |
+| --- | --- |
+| Dil | C |
+| Geliştirme ortamı | Visual Studio 2022 (MSVC) |
+| Kütüphaneler | `stdio.h`, `stdlib.h`, `locale.h` (Türkçe karakter desteği), `Windows.h` |
+| Arayüz | ANSI escape kodlarıyla renklendirilmiş konsol |
 
-Derleyici: Visual Studio / Code::Blocks / Dev-C++ (Windows)
+## 📁 Proje Yapısı
 
-Kullanılan kütüphaneler:
+```
+.
+├── KisilikTesti.sln             # Visual Studio çözüm dosyası
+└── KisilikTesti/
+    ├── KisilikTesti.c           # Uygulamanın kaynak kodu
+    ├── KisilikTesti.vcxproj
+    └── KisilikTesti.vcxproj.filters
+```
 
-<stdio.h> — giriş/çıkış işlemleri için
+| Fonksiyon | Görevi |
+| --- | --- |
+| `giris_ekrani()` | Ana menü ve kullanıcı seçimi |
+| `soru_sorma()` | 20 sorunun sorulması ve puanlanması |
+| `karar_verme()` | Puan aralığına göre kişilik analizi ve şiir önerisi |
+| `isim_ve_puan_kaydet()` | Sonucun kayıt listesine eklenmesi |
+| `son_kayitlari_yazdirma()` | Geçmiş kayıtların listelenmesi |
+| `yukleme_ekrani()` | Yükleme animasyonu |
 
-<stdlib.h> — sistem işlemleri için
+## 🚀 Çalıştırma
 
-<locale.h> — Türkçe karakter desteği için
+1. Depoyu klonlayın.
+2. `KisilikTesti.sln` dosyasını Visual Studio 2022 ile açın.
+3. **Ctrl + F5** ile derleyip çalıştırın.
 
-<Windows.h> — Sleep() ve system("cls") gibi işlevler için
+> Proje `Windows.h` ve `scanf_s` kullandığı için Windows üzerinde MSVC ile derlenecek şekilde hazırlanmıştır.
 
-Renk kodları: ANSI escape kodları ile terminal renklendirme
+## 🖥️ Örnek Ekran
 
-📁 Örnek Ekranlar
-Program çıktıları renkli konsol ekranında aşağıdaki gibi görüntülenmektedir:
-
-rust
-Kopyala
-Düzenle
+```text
 ---------- KİŞİLİK TESTİNE HOŞ GELDİNİZ :) ----------
+
 -> Lütfen seçim yapınız:
 1- Teste Başlamak için lütfen 1'i seçiniz.
 2- Geçmiş Kayıt Görüntülemek için lütfen 2'yi seçiniz.
+-> Seçiminiz:
+```
+
+## 🔗 İlgili Proje
+
+Aynı testin grafik arayüzlü sürümü: **C# Windows Forms ile Şiir Öneren Kişilik Testi**
+
+## 👩‍💻 Geliştirici
+
+**Zeynep Erdem** — [github.com/zeyerdm](https://github.com/zeyerdm)
